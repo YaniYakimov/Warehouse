@@ -1,11 +1,13 @@
 package main;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Shop {
     private int minimumThreshold = 14;
     private int capacity = 15;
-    private Map<ProductType, Map<ProductKind, Set<Product>>> products = new HashMap<>();
+    private ConcurrentHashMap<ProductType, Map<ProductKind, Set<Product>>> products = new ConcurrentHashMap<>();
+//    private Map<ProductType, Map<ProductKind, Set<Product>>> products = new HashMap<>();
     public Shop() {
         for (int i = 0; i < 15; i++) {
             Product banana = new Product(ProductKind.BANANA);
